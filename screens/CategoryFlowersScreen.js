@@ -1,13 +1,12 @@
 import React from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
-import { Header } from "react-native/Libraries/NewAppScreen";
 
 import { CATEGORIES } from "../data/dummy-data";
 
 const CategoryFlowersScreen = (props) => {
   const catId = props.navigation.getParam("categoryId");
-
   const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
+
   return (
     <View style={styles.screen}>
       <Text>The Category Flower Screen!</Text>
