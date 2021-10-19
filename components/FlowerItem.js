@@ -7,6 +7,7 @@ import {
   TouchableNativeFeedback,
   Platform,
   Image,
+  ImageBackground,
 } from "react-native";
 
 const FlowerItem = (props) => {
@@ -39,7 +40,12 @@ const FlowerItem = (props) => {
       <TouchableCmp onPress={props.onSelectFlower}>
         <View>
           <View style={{ ...styles.flowerRow, ...styles.flowerHeader }}>
-            <Text>{props.title}</Text>
+            <ImageBackground
+              source={{ uri: props.photo }}
+              style={styles.bgImage}
+            >
+              <Text style={styles.title}>{props.title}</Text>
+            </ImageBackground>
           </View>
           <View style={{ ...styles.flowerRow, ...styles.flowerDetail }}>
             <View style={{ ...styles.flowerRow, ...styles.images }}>
@@ -78,7 +84,8 @@ const styles = StyleSheet.create({
   flowerItem: {
     height: 200,
     width: "100%",
-    backgroundColor: "#ccc",
+    backgroundColor: "transparent",
+    margin: 5,
   },
   flowerRow: {
     flexDirection: "row",
@@ -87,11 +94,23 @@ const styles = StyleSheet.create({
     height: "82%",
   },
   flowerDetail: {
-    paddingHorizontal: 10,
+    paddingHorizontal: 5,
     justifyContent: "flex-end",
+    backgroundColor: "rgba(255,255,255, 0.6)",
+    paddingVertical: 3
+  },
+  title: {
+    backgroundColor: "rgba(255,255,255, 0.2)",
+    fontFamily: "open-sans",
+    fontSize: 24,
+    paddingHorizontal: 10,
   },
   images: {
     paddingHorizontal: 5,
+  },
+  bgImage: {
+    width: "100%",
+    height: "100%",
   },
 });
 

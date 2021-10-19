@@ -12,7 +12,7 @@ const FlowersNavigator = createStackNavigator(
   {
     Categories: {
       screen: CategoriesScreen,
-      navigationOptions: { headerTitle: "Flower Categories" },
+      navigationOptions: { headerTitle: "Kategorie Kwiatów" },
     },
     CategoryFlowers: CategoryFlowersScreen,
     FlowerDetails: { screen: FlowerDetailsScreen },

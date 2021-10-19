@@ -9,6 +9,7 @@ const CategoryFlowersScreen = (props) => {
     return (
       <FlowerItem
         title={itemData.item.title}
+        photo={itemData.item.photo}
         temp={itemData.item.temp}
         easy={itemData.item.easy}
         hard={itemData.item.hard}
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: 'black',
+    paddingHorizontal: 5
   },
 });
 
