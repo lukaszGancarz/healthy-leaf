@@ -5,11 +5,13 @@ import { createAppContainer } from "react-navigation";
 import CategoriesScreen from "../screens/CategoriesScreen";
 import CategoryFlowersScreen from "../screens/CategoryFlowersScreen";
 import FlowerDetailsScreen from "../screens/FlowerDetailsScreen";
+import WelcomeScreen from "../screens/WelcomeScreen";
 
 import Colors from "../constants/Colors";
 
 const FlowersNavigator = createStackNavigator(
   {
+    Welcome: WelcomeScreen,
     Categories: {
       screen: CategoriesScreen,
       navigationOptions: { headerTitle: "Kategorie Kwiatów" },
@@ -20,7 +22,8 @@ const FlowersNavigator = createStackNavigator(
   {
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "black",
+        backgroundColor:
+          Platform.OS === "android" ? Colors.primaryColor : "black",
       },
       headerTintColor:
         Platform.OS === "android" ? "black" : Colors.primaryColor,

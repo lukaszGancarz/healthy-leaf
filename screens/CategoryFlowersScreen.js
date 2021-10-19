@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, FlatList, StyleSheet } from "react-native";
 import FlowerItem from "../components/FlowerItem";
 
 import { CATEGORIES, FLOWERS } from "../data/dummy-data";
