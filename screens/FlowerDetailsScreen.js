@@ -5,9 +5,12 @@ const FlowerDetailsScreen = (props) => {
   return (
     <View style={styles.screen}>
       <Text>The Flower Details Screen!</Text>
-      <Button title="Go to start!" onPress={()=>{
+      <Button
+        title="Go to start!"
+        onPress={() => {
           props.navigation.popToTop();
-      }}/>
+        }}
+      />
     </View>
   );
 };
@@ -17,6 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "black",
   },
 });
 

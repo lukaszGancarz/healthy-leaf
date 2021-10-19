@@ -26,6 +26,14 @@ const FlowerItem = (props) => {
     waterNeeded = 2;
   if (props.aLotWater && !props.notALotOfWater) waterNeeded = 3;
 
+  let easy = require("../images/easy.png");
+  if (props.easy && props.hard) easy = require("../images/normal.png");
+  else if (props.hard) easy = require("../images/hard.png");
+
+  let temp = require("../images/lowTemp.png");
+  if (props.temp === 2) temp = require("../images/normalTemp.png");
+  if (props.temp === 3) temp = require("../images/highTemp.png");
+
   return (
     <View style={styles.flowerItem}>
       <TouchableCmp onPress={props.onSelectFlower}>
@@ -34,18 +42,26 @@ const FlowerItem = (props) => {
             <Text>{props.title}</Text>
           </View>
           <View style={{ ...styles.flowerRow, ...styles.flowerDetail }}>
-            <Image source={logo} />
+            <View style={{ ...styles.flowerRow, ...styles.images }}>
+              <Image source={easy} />
+            </View>
+            <View style={{ ...styles.flowerRow, ...styles.images }}>
+              <Image source={temp} />
+            </View>
+            <View style={{ ...styles.flowerRow, ...styles.images }}>
+              <Image source={logo} />
+            </View>
             {waterNeeded === 1 && (
               <Image source={require("../images/drop.png")} />
             )}
             {waterNeeded === 2 && (
-              <View style={styles.flowerRow}>
+              <View style={{ ...styles.flowerRow, ...styles.images }}>
                 <Image source={require("../images/drop.png")} />
                 <Image source={require("../images/drop.png")} />
               </View>
             )}
             {waterNeeded === 3 && (
-              <View style={styles.flowerRow}>
+              <View style={{ ...styles.flowerRow, ...styles.images }}>
                 <Image source={require("../images/drop.png")} />
                 <Image source={require("../images/drop.png")} />
                 <Image source={require("../images/drop.png")} />
@@ -73,6 +89,9 @@ const styles = StyleSheet.create({
   flowerDetail: {
     paddingHorizontal: 10,
     justifyContent: "flex-end",
+  },
+  images: {
+    paddingHorizontal: 5,
   },
 });
 

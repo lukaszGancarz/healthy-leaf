@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 
 import { CATEGORIES } from "../data/dummy-data";
 import CategoryGridTile from "../components/CategoryGridTile";
@@ -23,20 +23,22 @@ const CategoriesScreen = (props) => {
   };
 
   return (
-    <FlatList
-      keyExtractor={(item, index) => item.id}
-      data={CATEGORIES}
-      renderItem={renderGridItem}
-      numColumns={2}
-    />
+      <FlatList
+        keyExtractor={(item, index) => item.id}
+        data={CATEGORIES}
+        renderItem={renderGridItem}
+        numColumns={2}
+        style={styles.screen}
+      />
   );
 };
 
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    // justifyContent: "center",
+    // alignItems: "center",
+    backgroundColor: "black",
   },
 });
 

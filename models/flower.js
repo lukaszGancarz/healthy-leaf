@@ -5,6 +5,7 @@ class Flower {
     title,
     description,
     photo,
+    temp,
     palm,
     likeSun,
     likeDark,
@@ -21,6 +22,7 @@ class Flower {
     this.title = title;
     this.description = description;
     this.photo = photo;
+    this.temp = temp;
     this.palm = palm;
     this.likeSun = likeSun;
     this.likeDark = likeDark;
