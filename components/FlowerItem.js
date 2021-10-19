@@ -83,9 +83,11 @@ const FlowerItem = (props) => {
 const styles = StyleSheet.create({
   flowerItem: {
     height: 200,
-    width: "100%",
-    backgroundColor: "transparent",
+    width: "98%",
+    backgroundColor: "white",
     margin: 5,
+    borderRadius: 15,
+    overflow: 'hidden',
   },
   flowerRow: {
     flexDirection: "row",
@@ -96,12 +98,13 @@ const styles = StyleSheet.create({
   flowerDetail: {
     paddingHorizontal: 5,
     justifyContent: "flex-end",
-    backgroundColor: "rgba(255,255,255, 0.6)",
-    paddingVertical: 3
+    backgroundColor: "rgba(0,0,0, 0.5)",
+    paddingVertical: 2
   },
   title: {
-    backgroundColor: "rgba(255,255,255, 0.2)",
-    fontFamily: "open-sans",
+    backgroundColor: "rgba(0,0,0, 0.3)",
+    fontFamily: "open-sans-bold",
+    color: 'white',
     fontSize: 24,
     paddingHorizontal: 10,
   },
