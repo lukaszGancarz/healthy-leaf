@@ -3,6 +3,7 @@ import { View, Text, FlatList, StyleSheet } from "react-native";
 import FlowerItem from "../components/FlowerItem";
 
 import { CATEGORIES, FLOWERS } from "../data/dummy-data";
+import FlowerDetailsScreen from "./FlowerDetailsScreen";
 
 const CategoryFlowersScreen = (props) => {
   const renderFlowerItem = (itemData) => {
@@ -17,7 +18,14 @@ const CategoryFlowersScreen = (props) => {
         dark={itemData.item.likeDark}
         aLotWater={itemData.item.needALotOfWater}
         notALotOfWater={itemData.item.dontNeedALotOfWater}
-        onSelectFlower={() => {}}
+        onSelectFlower={() => {
+          props.navigation.navigate({
+            routeName: "FlowerDetails",
+            params: {
+              flowerId: itemData.item.id,
+            },
+          });
+        }}
       />
     );
   };
@@ -50,8 +58,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: 'black',
-    paddingHorizontal: 5
+    backgroundColor: "black",
+    paddingHorizontal: 5,
   },
 });
 
