@@ -20,7 +20,7 @@ const FlowersNavigator = createStackNavigator(
   {
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "",
+        backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "black",
       },
       headerTintColor:
         Platform.OS === "android" ? "black" : Colors.primaryColor,
