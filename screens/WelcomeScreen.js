@@ -43,10 +43,12 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     marginTop: 150,
-    borderWidth: 5,
+    borderWidth: 3,
     borderColor: "black",
     borderRadius: 20,
     padding: 15,
+    backgroundColor: "rgba(49,159,255, 0.25)",
+    flexWrap: "wrap",
   },
   title: {
     fontFamily: "open-sans-bold",
