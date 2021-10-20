@@ -11,7 +11,6 @@ const FlowerDetailsScreen = (props) => {
   const selectedFlower = FLOWERS.find((flower) => flower.id === flowerId);
   return (
     <FlowerDetails
-      style={styles.screen}
       title={selectedFlower.title}
       photo={selectedFlower.photo}
       temp={selectedFlower.temp}
@@ -48,12 +47,6 @@ FlowerDetailsScreen.navigationOptions = (navigationData) => {
 };
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "black",
-  },
 });
 
 export default FlowerDetailsScreen;

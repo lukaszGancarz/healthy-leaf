@@ -4,26 +4,26 @@ import {
   Text,
   StyleSheet,
   Platform,
-  TouchableOpacity,
-  TouchableNativeFeedback,
   ImageBackground,
+  TouchableWithoutFeedback,
+  ScrollView,
+  SafeAreaView,
 } from "react-native";
 
 import Colors from "../constants/Colors";
 
 const FlowerDetails = (props) => {
-  let TouchableCmp = TouchableOpacity;
-  if (Platform.OS === "android" && Platform.Version >= 21)
-    TouchableCmp = TouchableNativeFeedback;
-
   return (
-    <View style={styles.container}>
-      <TouchableCmp>
-        <ImageBackground style={styles.img} source={{ uri: props.photo }}>
-          <Text style={styles.title}>{props.title}</Text>
-        </ImageBackground>
-      </TouchableCmp>
-    </View>
+    <SafeAreaView>
+      <ScrollView >
+        <View style={styles.container}>
+          <ImageBackground style={styles.img} source={{ uri: props.photo }}>
+            <Text style={styles.title}>{props.title}</Text>
+          </ImageBackground>
+          <Text style={styles.characteristic}>Charakterystyka:</Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   img: {
     width: "100%",
-    height: "80%",
+    height: 500,
   },
   title: {
     textAlign: "center",
@@ -43,6 +43,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 35,
     paddingVertical: 5,
+  },
+  characteristic: {
+    fontFamily: "open-sans",
+    fontSize: 24,
+    textAlign: "center",
+    color: "white",
   },
 });
 
