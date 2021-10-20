@@ -14,7 +14,7 @@ const WelcomeScreen = (props) => {
   if (Platform.OS === "android" && Platform.Version >= 21)
     TouchableCmp = TouchableNativeFeedback;
   return (
-    <TouchableCmp onPress={() => props.navigation.replace("Categories")}>
+    <TouchableCmp onPress={() => props.navigation.replace("BottomNavigator")}>
       <ImageBackground
         style={styles.screen}
         source={require("../images/garden.jpg")}

@@ -15,7 +15,6 @@ import Colors from "../constants/Colors";
 
 const FlowersNavigator = createStackNavigator(
   {
-    Welcome: WelcomeScreen,
     Categories: {
       screen: CategoriesScreen,
       navigationOptions: { headerTitle: "Kategorie Kwiatów" },
@@ -42,7 +41,7 @@ const BottomTabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: "Główna",
         tabBarIcon: (tabInfo) => {
-          return <Ionicons Name="home" size={25} color={tabInfo.tintColor} />;
+          return <Ionicons name="home" size={25} color={tabInfo.tintColor} />;
         },
       },
     },
@@ -50,10 +49,10 @@ const BottomTabNavigator = createBottomTabNavigator(
       screen: GardenScreen,
       navigationOptions: {
         tabBarLabel: "Ogród",
-        tabBarIcon: ({tintColor}) => {
+        tabBarIcon: ({ tintColor }) => {
           return (
             <MaterialCommunityIcons
-              Name="flower-tulip-outline"
+              name="flower-tulip-outline"
               size={25}
               color={tintColor}
             />
@@ -77,4 +76,12 @@ const BottomTabNavigator = createBottomTabNavigator(
   }
 );
 
-export default createAppContainer(BottomTabNavigator);
+const mainNavigator = createStackNavigator({
+  Welcome: WelcomeScreen,
+  BottomNavigator: {
+    screen: BottomTabNavigator,
+    navigationOptions: { headerShown: false },
+  },
+});
+
+export default createAppContainer(mainNavigator);
