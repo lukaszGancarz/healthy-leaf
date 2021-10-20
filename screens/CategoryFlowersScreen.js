@@ -3,7 +3,6 @@ import { View, FlatList, StyleSheet } from "react-native";
 import FlowerItem from "../components/FlowerItem";
 
 import { CATEGORIES, FLOWERS } from "../data/dummy-data";
-import FlowerDetailsScreen from "./FlowerDetailsScreen";
 
 const CategoryFlowersScreen = (props) => {
   const renderFlowerItem = (itemData) => {

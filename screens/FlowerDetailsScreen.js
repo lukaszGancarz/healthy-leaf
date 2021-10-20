@@ -3,20 +3,28 @@ import { View, Text, Button, StyleSheet, Platform } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import { FLOWERS } from "../data/dummy-data";
 import HeaderButton from "../components/HeaderButton";
+import FlowerDetails from "../components/FlowerDetails";
+import Colors from "../constants/Colors";
 
 const FlowerDetailsScreen = (props) => {
   const flowerId = props.navigation.getParam("flowerId");
   const selectedFlower = FLOWERS.find((flower) => flower.id === flowerId);
   return (
-    <View style={styles.screen}>
-      <Text>The Flower Details Screen!</Text>
-      <Button
-        title="Go to start!"
-        onPress={() => {
-          props.navigation.popToTop();
-        }}
-      />
-    </View>
+    <FlowerDetails
+      style={styles.screen}
+      title={selectedFlower.title}
+      photo={selectedFlower.photo}
+      temp={selectedFlower.temp}
+      easy={selectedFlower.easy}
+      hard={selectedFlower.hard}
+      sun={selectedFlower.likeSun}
+      dark={selectedFlower.likeDark}
+      aLotWater={selectedFlower.needALotOfWater}
+      notALotOfWater={selectedFlower.dontNeedALotOfWater}
+      onAddBtn={() => {
+        props.navigation.back();
+      }}
+    />
   );
 };
 
@@ -27,7 +35,13 @@ FlowerDetailsScreen.navigationOptions = (navigationData) => {
     headerTitle: selectedFlower.title,
     headerRight: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
-        <Item title="add" iconName={Platform.OS === 'android' ? 'add-circle-outline' : "ios-add"} onPress={() => {}} />
+        <Item
+          title="add"
+          iconName={
+            Platform.OS === "android" ? "add-circle-outline" : "ios-add"
+          }
+          onPress={() => {}}
+        />
       </HeaderButtons>
     ),
   };
