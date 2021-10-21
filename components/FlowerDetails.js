@@ -3,9 +3,7 @@ import {
   View,
   Text,
   StyleSheet,
-  Platform,
   ImageBackground,
-  TouchableWithoutFeedback,
   ScrollView,
   SafeAreaView,
 } from "react-native";
