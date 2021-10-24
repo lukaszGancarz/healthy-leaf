@@ -20,6 +20,8 @@ const FlowerDetailsScreen = (props) => {
       dark={selectedFlower.likeDark}
       aLotWater={selectedFlower.needALotOfWater}
       notALotOfWater={selectedFlower.dontNeedALotOfWater}
+      howOftenToFertilize={selectedFlower.howOftenToFertilize}
+      description={selectedFlower.description}
       onAddBtn={() => {
         props.navigation.back();
       }}
