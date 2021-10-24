@@ -134,7 +134,8 @@ const styles = StyleSheet.create({
     fontFamily: "open-sans",
     fontSize: 16,
     textAlign: 'justify',
-    marginHorizontal: 10
+    marginHorizontal: 10,
+    lineHeight: 27,
   }
 });
 
